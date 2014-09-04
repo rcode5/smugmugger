@@ -4,4 +4,4 @@ gem 'json'
 gem 'oauth'
 gem 'ruby-smugmug', github: "zanker/ruby-smugmug"
 
-gem 'pry'
+#gem 'pry'

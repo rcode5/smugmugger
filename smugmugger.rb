@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'pry'
 require './lib/smug_mugger'
 
 #SMUGMUG_API_KEY=tmaCooLdAJObII2aiX6h57iy3UkaeQuj
