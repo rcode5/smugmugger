@@ -1,3 +1,4 @@
+require_relative './album.rb'
 module SmugMugger
   class Client
 
@@ -12,8 +13,13 @@ module SmugMugger
                                     })
     end
 
+    def find_album(album_name)
+      name = album_name.downcase
+      albums.detect{|album| album.title.downcase == name}
+    end
+
     def albums
-      @client.albums
+      @albums ||= @client.albums.get.map{|album| Album.new(@client, album)}
     end
 
   end
