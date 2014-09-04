@@ -13,7 +13,7 @@ c = SmugMugger::Client.new ENV['SMUGMUG_API_KEY'], ENV['SMUGMUG_API_SECRET'], EN
 albums = c.albums
 puts albums
 
-album = c.find_album 'gallery1'
+album = c.find_album 'gallery2'
 puts album.images.map(&:tiny_url)
 
 

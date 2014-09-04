@@ -19,7 +19,8 @@ module SmugMugger
     end
 
     def images
-      puts @client.images.get(AlbumID: id, AlbumKey: key, Heavy: true)
+      resp = @client.images.get(AlbumID: id, AlbumKey: key, Heavy: true)
+      resp['Images'].map{|image_info| Image.new image_info }
     end
 
   end

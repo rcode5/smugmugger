@@ -30,9 +30,7 @@ module SmugMugger
   class Image
     
     def initialize(image_info)
-      binding.pry
       @info = image_info
-      
     end
 
     def id
@@ -44,8 +42,6 @@ module SmugMugger
     end
     
     def tiny_url
-      puts "INFO ", @info
-      binding.pry
       @info["TinyURL"]
     end
 
