@@ -13,12 +13,13 @@ module SmugMugger
                                     })
     end
 
-    def find_album(album_name)
-      name = album_name.downcase
-      albums.detect{|album| album.title.downcase == name}
+    def find_album_by_id_and_key(album_id, album_key)
+      album_data = @client.albums.getInfo(AlbumID: album_id, AlbumKey: album_key)
+      Album.new(@client, album_data) if album_data
     end
 
-    def albums
+    def albums(opts = nil)
+      opts ||= {}
       @albums ||= @client.albums.get.map{|album| Album.new(@client, album)}
     end
 

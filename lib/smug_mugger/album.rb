@@ -23,5 +23,8 @@ module SmugMugger
       resp['Images'].map{|image_info| Image.new image_info }
     end
 
+    def to_s
+      {id: id, key: key, title: title}.to_s
+    end
   end
 end
